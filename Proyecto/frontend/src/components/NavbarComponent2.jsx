@@ -7,11 +7,10 @@ function NavbarComponent2(){
         <NavStyle>
             <header class="header">
                 <div class="logo">
-                    <h1>CodePy</h1>
+                    <h1>🐍 CodePy </h1>
                 </div>
                 <nav>
                 </nav>
-                <a class="btn" href="/"><button>Volver al menú principal</button></a>
             </header>
             </NavStyle>
         </>

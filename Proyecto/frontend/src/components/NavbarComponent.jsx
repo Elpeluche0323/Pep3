@@ -7,7 +7,7 @@ function NavbarComponent(){
         <NavStyle>
             <header class="header">
                 <div class="logo">
-                    <h1>Co-Py</h1>
+                    <h1>CodePy</h1>
                 </div>
                 <nav>
                 </nav>

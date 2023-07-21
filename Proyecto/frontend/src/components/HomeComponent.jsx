@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { createGlobalStyle } from 'styled-components'
+import NavbarComponent2 from "./NavbarComponent2";
 
 
 export default function HomeComponent() {
@@ -25,6 +26,7 @@ export default function HomeComponent() {
 
   return (
     <div>
+      <NavbarComponent2> </NavbarComponent2>
       <GlobalStyle />
       <HomeStyle>
         <h1 className="text-center">
@@ -39,7 +41,11 @@ export default function HomeComponent() {
         <h3 className="text-center">
           {" "}
           <b>
-            Selecciona tu nivel de dificultad y comienza a resolver los
+            Codepy es una pagina web que permitira a los usuarios practicar y
+            mejorar sus habilidades en Python.{" "}
+            </b>
+            <b>
+            Para comenzar selecciona un nivel de dificultad y comienza a resolver los
             desafíos.{" "}
           </b>
         </h3>
@@ -53,14 +59,14 @@ export default function HomeComponent() {
             Para principiantes en Python que quieren sumergirse en el mundo de
             la programación y aprender con desafios básicos y rápidos.
           </h3>
-          <button type="button" class="btn btn-primary" onClick={NivelBasico}>
+          <button variant="button" class="btn btn-primary" onClick={NivelBasico}>
             Comenzar
           </button>
         </div>
         <br></br>
         <div className="intermedio">
           <h2>
-            <b>Modo Intermedio 🤔</b>
+            <b>Modo Intermedio 😐</b>
           </h2>
           <h3>
             Para aquellos que ya tienen conocimientos en Python y quieren poner
@@ -86,7 +92,7 @@ export default function HomeComponent() {
         <br></br>
         <div className="nueva-pregunta">
           <h2>
-            <b>Agregar un nuevo desafio 🐍 </b>
+            <b>Agregar un nuevo desafio 🐍🤔 </b>
           </h2>
           <h3>
             ¿Has creado un desafio y quieres ver como otros se enfrentan a el?
@@ -104,7 +110,7 @@ export default function HomeComponent() {
 
 const GlobalStyle = createGlobalStyle`
 body {
-    background-color: #9E0F20;
+    background-color: #87DF79;
 }
 `;
 
@@ -115,8 +121,10 @@ const HomeStyle = styled.nav`
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    color: #fff;
+    color: #fff11;
 }
+
+
 
 .basico{
     justify-content: center;

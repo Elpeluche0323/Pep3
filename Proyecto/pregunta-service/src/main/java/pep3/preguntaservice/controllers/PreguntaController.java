@@ -25,6 +25,14 @@ public class PreguntaController {
         return ResponseEntity.ok(pregunta);
     }
 
+    /**
+    @GetMapping("/basico")
+     
+    @GetMapping("/intermedio")
+
+    @GetMapping("/avanzado")
+
+     **/
     @PostMapping
     public void guardarPregunta(@RequestBody PreguntaEntity pregunta){
         preguntaService.guardarPregunta(pregunta);

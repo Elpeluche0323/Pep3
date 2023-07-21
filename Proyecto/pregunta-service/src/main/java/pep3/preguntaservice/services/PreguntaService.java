@@ -18,4 +18,5 @@ public class PreguntaService {
     public void guardarPregunta(PreguntaEntity pregunta){
         preguntaRepository.save(pregunta);
     }
+
 }
