@@ -27,7 +27,7 @@ public class PreguntaController {
 
     /**
     @GetMapping("/basico")
-     
+
     @GetMapping("/intermedio")
 
     @GetMapping("/avanzado")
