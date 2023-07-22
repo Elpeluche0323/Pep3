@@ -2,28 +2,35 @@ import React, { Component } from "react";
 import PreguntaComponent from "./PreguntaComponent";
 import styled from "styled-components";
 import NavbarComponent2 from "./NavbarComponent2";
+import PruebaService from "../services/PruebaService";
 
-class PruebaComponent extends Component {
+class PruebaAvanzadoComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
       datas: [],
     };
   }
-
+/** 
   componentDidMount() {
-    fetch("http://localhost:8080/prueba/basico")
+    fetch("http://localhost:8080/prueba/avanzado")
       .then((response) => response.json())
       .then((data) => this.setState({ datas: data }));
+  }
+**/
+  componentDidMount() {
+    PruebaService.getPruebaAvanzado().then((res) => {
+      this.setState({ datas: res.data});
+  });
   }
 
   render() {
     return (
       <HomeStyle>
-        <NavbarComponent2 />
+        <NavbarComponent2/>
 
         <div className="text-center">
-          <h1 className="asd">
+          <h1 className="add">
             <b>
               <u>Prueba: Modo Básico </u>
             </b>
@@ -43,7 +50,7 @@ class PruebaComponent extends Component {
   }
 }
 
-export default PruebaComponent;
+export default PruebaAvanzadoComponent;
 
 
 const HomeStyle = styled.nav`
@@ -54,7 +61,7 @@ const HomeStyle = styled.nav`
     align-items: center;
     color: #FDFEFE;
 }
-.asd{
+.add{
     padding-top: 10px;
     padding-bottom: 30px;
 

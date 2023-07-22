@@ -3,7 +3,9 @@ import './App.module.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import HomeComponent from './components/HomeComponent';
 import PreguntaComponent from './components/PreguntaComponent';
-import PruebaComponent from './components/PruebaComponent'
+import PruebaBasicoComponent from './components/PruebaBasicoComponent'
+import PruebaIntermedioComponent from './components/PruebaIntermedioComponent'
+import PruebaAvanzadoComponent from './components/PruebaAvanzadoComponent'
 import CrearPreguntaComponent from './components/CrearPreguntaComponent';
 
 function App() {
@@ -14,7 +16,9 @@ function App() {
           <Route path="/" element={<HomeComponent />} />
           <Route path="/" element={<PreguntaComponent/>} />
           <Route path="/nueva-pregunta" element={<CrearPreguntaComponent />} />
-          <Route path="/prueba" element={<PruebaComponent />} />
+          <Route path="/prueba/basico" element={<PruebaBasicoComponent />} />
+          <Route path="/prueba/intermedio" element={<PruebaIntermedioComponent />} />
+          <Route path="/prueba/avanzado" element={<PruebaAvanzadoComponent />} />
         </Routes>
       </BrowserRouter>
     </div>

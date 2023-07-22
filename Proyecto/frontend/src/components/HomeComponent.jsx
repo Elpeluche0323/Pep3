@@ -12,7 +12,7 @@ export default function HomeComponent() {
     window.location.href = "/prueba/basico";
   };
 
-  const NivelMedio = () => {
+  const NivelIntermedio = () => {
     localStorage.setItem("puntaje", 0);
     localStorage.setItem("restantes", 4);
     window.location.href = "/prueba/intermedio";
@@ -76,7 +76,7 @@ export default function HomeComponent() {
             Para aquellos que ya tienen conocimientos en Python y quieren poner
             a prueba sus habilidades con desafios de dificultad media.
           </h3>
-          <button type="button" class="btn btn-primary" onClick={NivelMedio}>
+          <button type="button" class="btn btn-primary" onClick={NivelIntermedio}>
             Comenzar
           </button>
         </div>
