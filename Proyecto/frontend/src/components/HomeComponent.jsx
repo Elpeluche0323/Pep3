@@ -9,20 +9,24 @@ export default function HomeComponent() {
   const NivelBasico = () => {
     localStorage.setItem("puntaje", 0);
     localStorage.setItem("restantes", 4);
-    window.location.href = "/prueba";
+    window.location.href = "/prueba/basico";
   };
 
   const NivelMedio = () => {
     localStorage.setItem("puntaje", 0);
     localStorage.setItem("restantes", 4);
-    window.location.href = "/prueba";
+    window.location.href = "/prueba/intermedio";
   };
 
   const NivelAvanzado = () => {
     localStorage.setItem("puntaje", 0);
     localStorage.setItem("restantes", 4);
-    window.location.href = "/prueba";
+    window.location.href = "/prueba/avanzado";
   };
+
+  const NuevaPregunta = () => {
+    window.location.href = "/nueva-pregunta"
+  }
 
   return (
     <div>
@@ -72,7 +76,7 @@ export default function HomeComponent() {
             Para aquellos que ya tienen conocimientos en Python y quieren poner
             a prueba sus habilidades con desafios de dificultad media.
           </h3>
-          <button type="button" class="btn btn-primary">
+          <button type="button" class="btn btn-primary" onClick={NivelMedio}>
             Comenzar
           </button>
         </div>
@@ -84,7 +88,7 @@ export default function HomeComponent() {
           <h3>
             Para aquellos expertos en Python que buscan los mayores desafios.
           </h3>
-          <button type="button" class="btn btn-primary">
+          <button type="button" class="btn btn-primary" onClick={NivelAvanzado}>
             Comenzar
           </button>
         </div>
@@ -98,7 +102,7 @@ export default function HomeComponent() {
             ¿Has creado un desafio y quieres ver como otros se enfrentan a el?
             Accede a esta opción para agregar a un nuevo desafio.
           </h3>
-          <button type="button" class="btn btn-primary">
+          <button type="button" class="btn btn-primary" onClick={NuevaPregunta}>
             Acceder
           </button>
         </div>
