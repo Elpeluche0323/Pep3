@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import NavbarComponent2 from "./NavbarComponent2";
 import styled from "styled-components";
 import PreguntaService from '../services/PreguntaService';
+import FooterComponent from "./FooterComponent";
+import { createGlobalStyle } from 'styled-components'
 
 class ListaPreguntaComponent extends Component{
     constructor(props){
@@ -19,6 +21,7 @@ class ListaPreguntaComponent extends Component{
 
     render(){
         return(
+            
             <div className="home">
                 <NavbarComponent2 />
                 <Styles>
@@ -28,10 +31,10 @@ class ListaPreguntaComponent extends Component{
                         <table border="1" class="content-table">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
                                     <th>Pregunta</th>
                                     <th>Codigo</th>
                                     <th>Dificultad</th>
+                                    <th>Respuesta</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -46,7 +49,9 @@ class ListaPreguntaComponent extends Component{
                             </tbody>
                         </table>
                     </div>
+                    
                 </Styles>
+                <FooterComponent></FooterComponent>
             </div>
             
         );
@@ -54,6 +59,12 @@ class ListaPreguntaComponent extends Component{
 }
 
 export default ListaPreguntaComponent;
+
+const GlobalStyle = createGlobalStyle`
+body {
+    background-color: #87DF79;
+}
+`;
 
 const Styles = styled.div`
 

@@ -5,6 +5,7 @@ import PreguntaService from "../services/PreguntaService";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import swal from 'sweetalert';
+import FooterComponent from "./FooterComponent";
 
 export default function CrearPreguntaComponent(props){
 
@@ -102,7 +103,9 @@ export default function CrearPreguntaComponent(props){
                     </div>
                 
             </div>
+            <FooterComponent></FooterComponent>
             </Styles>
+            
         )
     }
 

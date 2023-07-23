@@ -3,6 +3,7 @@ import PreguntaComponent from "./PreguntaComponent";
 import styled from "styled-components";
 import NavbarComponent2 from "./NavbarComponent2";
 import PreguntaService from "../services/PreguntaService";
+import FooterComponent from "./FooterComponent";
 
 class PruebaAvanzadoComponent extends Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class PruebaAvanzadoComponent extends Component {
 
   componentDidMount(){
     PreguntaService.getPreguntaAvanzado().then((res) => {
-        this.setState({ data: res.data});
+        this.setState({ datas: res.data});
     });
 }
 
@@ -34,12 +35,15 @@ class PruebaAvanzadoComponent extends Component {
               id={datas.id}
               pregunta={datas.pregunta}
               codigo={datas.codigo}
+              dificultad={datas.dificultad}
               respuesta={datas.respuesta}
               
             ></PreguntaComponent>
           ))}
+          <FooterComponent></FooterComponent>
         </div>
       </HomeStyle>
+      
     );
   }
 }

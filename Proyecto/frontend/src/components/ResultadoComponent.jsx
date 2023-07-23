@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
-import localStorage from "../services/Cronometro";
+import NavbarComponent2 from "./NavbarComponent2";
+import FooterComponent from "./FooterComponent";
 
 
 export default function ResultadoComponent() {
@@ -49,6 +50,7 @@ export default function ResultadoComponent() {
 
   return (
     <>
+      <NavbarComponent2> </NavbarComponent2>
       <GlobalStyle />
       <HomeStyle>
         <br></br>
@@ -132,6 +134,7 @@ export default function ResultadoComponent() {
         </div>
         <br></br>
       </HomeStyle>
+      <FooterComponent></FooterComponent>
     </>
   );
 }
@@ -153,7 +156,7 @@ const HomeStyle = styled.nav`
 
 }
 
-.facil{
+.basico{
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -165,6 +168,34 @@ const HomeStyle = styled.nav`
     width: 60%;
     margin: auto;
     border: 5px solid #FDFEFE;
+}
+
+.intermedio{
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #FDFEFE;
+  background-color: #1F618D;
+  border-radius: 25px;
+  padding: 20px;
+  width: 60%;
+  margin: auto;
+  border: 5px solid #FDFEFE;
+}
+
+.avanzado{
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #FDFEFE;
+  background-color: #1F618D;
+  border-radius: 25px;
+  padding: 20px;
+  width: 60%;
+  margin: auto;
+  border: 5px solid #FDFEFE;
 }
 
 .resultados{
@@ -228,7 +259,7 @@ const HomeStyle = styled.nav`
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #FDFEFE;
+    color: #000000;
     width: 80%;
     margin: auto;
     padding: 20px;

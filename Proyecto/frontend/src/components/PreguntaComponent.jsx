@@ -43,7 +43,9 @@ export default function PreguntaComponent({ id, pregunta, codigo, dificultad, re
       <HomeStyle>
         <h3 className="text-pregunta">
           <b>
-            Dificultad {id}: {dificultad}
+            Dificultad: {dificultad}
+            </b>
+            <b>
             Pregunta {id}: {pregunta}
           </b>
         </h3>
@@ -56,7 +58,7 @@ export default function PreguntaComponent({ id, pregunta, codigo, dificultad, re
             align="left"
           />
         </div>
-        <div className="respuesta">
+        <div class="respuesta">
           <Form>
             <Form.Group
               className="mb-3"
@@ -84,12 +86,14 @@ export default function PreguntaComponent({ id, pregunta, codigo, dificultad, re
         <hr></hr>
       </HomeStyle>
     </div>
+    
   );
+  
 }
 
 const GlobalStyle = createGlobalStyle`
 body { 
-    background-color: #154360;
+    background-color: #87DF79;
 }
 `;
 
@@ -100,7 +104,7 @@ const HomeStyle = styled.nav`
     flex-direction: column;
     align-items: center;
 }
-.codigo-box {
+.code-box {
     justify-content: center;
     display: flex;
     flex-direction: column;

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { createGlobalStyle } from 'styled-components'
 import NavbarComponent3 from "./NavbarComponent3";
+import FooterComponent from "./FooterComponent";
 
 
 export default function HomeComponent() {
@@ -54,7 +55,6 @@ export default function HomeComponent() {
           </b>
         </h3>
         <br></br>
-
         <div className="basico">
           <h2>
             <b>Modo Básico 🙂</b>
@@ -92,7 +92,7 @@ export default function HomeComponent() {
             Comenzar
           </button>
         </div>
-
+  
         <br></br>
         <div className="nueva-pregunta">
           <h2>
@@ -108,7 +108,9 @@ export default function HomeComponent() {
         </div>
         <br></br>
       </HomeStyle>
+      <FooterComponent></FooterComponent>
     </div>
+    
   );
 }
 
@@ -127,8 +129,6 @@ const HomeStyle = styled.nav`
     padding: 20px;
     color: #fff11;
 }
-
-
 
 .basico{
     justify-content: center;
