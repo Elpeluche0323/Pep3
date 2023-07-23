@@ -24,11 +24,11 @@ spring:
             allowed-headers: "*"
             allow-credentials: true
       routes:
-        - id: pregunta
-          uri: lb://pregunta
+        - id: pregunta-service
+          uri: lb://pregunta-service
           predicates:
-            - Path=/pregunta/**
-        - id: prueba
-          uri: lb://prueba
+            - Path=/pregunta-service/**
+        - id: prueba-service
+          uri: lb://prueba-service
           predicates:
-            - Path=/prueba/**
+            - Path=/prueba-service/**
