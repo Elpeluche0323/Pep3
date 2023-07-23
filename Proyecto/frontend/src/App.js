@@ -7,6 +7,8 @@ import PruebaBasicoComponent from './components/PruebaBasicoComponent'
 import PruebaIntermedioComponent from './components/PruebaIntermedioComponent'
 import PruebaAvanzadoComponent from './components/PruebaAvanzadoComponent'
 import CrearPreguntaComponent from './components/CrearPreguntaComponent';
+import ListaPreguntaComponent from './components/ListaPreguntaComponent';
+import ResultadoComponent from './components/ResultadoComponent';
 
 function App() {
   return (
@@ -14,11 +16,13 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomeComponent />} />
-          <Route path="/" element={<PreguntaComponent/>} />
-          <Route path="/nueva-pregunta" element={<CrearPreguntaComponent />} />
-          <Route path="/prueba/basico" element={<PruebaBasicoComponent />} />
-          <Route path="/prueba/intermedio" element={<PruebaIntermedioComponent />} />
-          <Route path="/prueba/avanzado" element={<PruebaAvanzadoComponent />} />
+          <Route path="/prueba" element={<PreguntaComponent/>} />
+          <Route path="/pregunta" element={<CrearPreguntaComponent />} />
+          <Route path="/pregunta/basico" element={<PruebaBasicoComponent />} />
+          <Route path="/pregunta/intermedio" element={<PruebaIntermedioComponent />} />
+          <Route path="/pregunta/avanzado" element={<PruebaAvanzadoComponent />} />
+          <Route path="/pregunta/lista-preguntas" element={<ListaPreguntaComponent />} />
+          <Route path="/resultados" element={<ResultadoComponent />} />
         </Routes>
       </BrowserRouter>
     </div>

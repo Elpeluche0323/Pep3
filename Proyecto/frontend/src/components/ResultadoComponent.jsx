@@ -1,60 +1,84 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { createGlobalStyle } from 'styled-components'
-import NavbarComponent3 from "./NavbarComponent3";
+import { createGlobalStyle } from "styled-components";
+import localStorage from "../services/Cronometro";
 
 
-export default function HomeComponent() {
-  
-  const PreguntaBasico = () => {
+export default function ResultadoComponent() {
+  const NivelBasico = () => {
     localStorage.setItem("puntaje", 0);
     localStorage.setItem("restantes", 4);
+    console.log()
     window.location.href = "/pregunta/basico";
   };
 
-  const PreguntaIntermedio = () => {
+  const NivelIntermedio = () => {
     localStorage.setItem("puntaje", 0);
     localStorage.setItem("restantes", 4);
+    console.log()
     window.location.href = "/pregunta/intermedio";
   };
 
-  const PreguntaAvanzado = () => {
+  const NivelAvanzado = () => {
     localStorage.setItem("puntaje", 0);
     localStorage.setItem("restantes", 4);
+    console.log()
     window.location.href = "/pregunta/avanzado";
   };
 
-  const Pregunta = () => {
-    window.location.href = "/pregunta"
-  }
+  const NuevaPregunta = () => {
+    console.log()
+    window.location.href = "/pregunta/";
+  };
+
+  const [puntaje, setPuntaje] = useState(
+    localStorage.getItem("puntaje") ? localStorage.getItem("puntaje") : 0
+  );
+
+  const [segundos, setSegundos] = useState(
+    localStorage.getItem("segundos") ? localStorage.getItem("segundos") : 0
+  );
+
+  const [minutos, setMinutos] = useState(
+    localStorage.getItem("minutos") ? localStorage.getItem("minutos") : 0
+  );
+
+  const [horas, setHoras] = useState(
+    localStorage.getItem("horas") ? localStorage.getItem("horas") : 0
+  );
 
   return (
-    <div>
-      <NavbarComponent3> </NavbarComponent3>
+    <>
       <GlobalStyle />
       <HomeStyle>
-        <h1 className="text-center">
-          <b>
-            {" "}
-            <i>
-              {" "}
-              <u>¡Bienvenido a CodePy!</u>
-            </i>
-          </b>
-        </h1>
-        <h3 className="text-center">
-          {" "}
-          <b>
-            Codepy es una pagina web que permitira a los usuarios practicar y
-            mejorar sus habilidades en Python.{" "}
-            </b>
-            <b>
-            Para comenzar selecciona un nivel de dificultad y comienza a resolver los
-            desafíos.{" "}
-          </b>
-        </h3>
         <br></br>
-
+        <div className="resultados">
+          <h1>
+            <b>
+              <u>Tu calificación es: {puntaje}.0/ 7.0</u>
+            </b>
+          </h1>
+          <h1>Tu tiempo fue de:</h1>
+          <h1>
+            <b>
+              {horas} horas, {minutos} minutos y {segundos} segundos.
+            </b>
+          </h1>
+          {puntaje == 7 ? (
+            <h1>¡Felicidades! Has completado el desafio con éxito.</h1>
+          ) : (
+            <h1>¡Puedes mejorar! Sigue intentandolo.</h1>
+          )}
+        </div>
+        <br></br>
+        <div className="texto-resultados">
+          <h1>
+            <b>
+              ¿Buscas otros desafios? Intentalo denuevo, aumenta la dificultad o
+              crea tu propio desafio.
+            </b>
+          </h1>
+        </div>
         <div className="basico">
           <h2>
             <b>Modo Básico 🙂</b>
@@ -63,7 +87,7 @@ export default function HomeComponent() {
             Para principiantes en Python que quieren sumergirse en el mundo de
             la programación y aprender con desafios básicos y rápidos.
           </h3>
-          <button variant="button" class="btn btn-primary" onClick={PreguntaBasico}>
+          <button variant="button" class="btn btn-primary" onClick={NivelBasico}>
             Comenzar
           </button>
         </div>
@@ -76,7 +100,7 @@ export default function HomeComponent() {
             Para aquellos que ya tienen conocimientos en Python y quieren poner
             a prueba sus habilidades con desafios de dificultad media.
           </h3>
-          <button type="button" class="btn btn-primary" onClick={PreguntaIntermedio}>
+          <button type="button" class="btn btn-primary" onClick={NivelIntermedio}>
             Comenzar
           </button>
         </div>
@@ -88,7 +112,7 @@ export default function HomeComponent() {
           <h3>
             Para aquellos expertos en Python que buscan los mayores desafios.
           </h3>
-          <button type="button" class="btn btn-primary" onClick={PreguntaAvanzado}>
+          <button type="button" class="btn btn-primary" onClick={NivelAvanzado}>
             Comenzar
           </button>
         </div>
@@ -102,13 +126,13 @@ export default function HomeComponent() {
             ¿Has creado un desafio y quieres ver como otros se enfrentan a el?
             Accede a esta opción para agregar a un nuevo desafio.
           </h3>
-          <button type="button" class="btn btn-primary" onClick={Pregunta}>
+          <button type="button" class="btn btn-primary" onClick={NuevaPregunta}>
             Acceder
           </button>
         </div>
         <br></br>
       </HomeStyle>
-    </div>
+    </>
   );
 }
 
@@ -125,12 +149,11 @@ const HomeStyle = styled.nav`
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    color: #fff11;
+    color: #fff;
+
 }
 
-
-
-.basico{
+.facil{
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -144,7 +167,22 @@ const HomeStyle = styled.nav`
     border: 5px solid #FDFEFE;
 }
 
-.intermedio{
+.resultados{
+    padding-top: 20px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #FDFEFE;
+    background-color: #0F889E;
+    border-radius: 25px;
+    padding: 20px;
+    width: 60%;
+    margin: auto;
+    border: 5px solid #FDFEFE;
+}
+
+.dificil{
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -158,7 +196,7 @@ const HomeStyle = styled.nav`
     border: 5px solid #FDFEFE;
 }
 
-.avanzado{
+.medio{
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -185,4 +223,13 @@ const HomeStyle = styled.nav`
     margin: auto;
     border: 5px solid #FDFEFE;
 }
+.texto-resultados{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #FDFEFE;
+    width: 80%;
+    margin: auto;
+    padding: 20px;
 `;

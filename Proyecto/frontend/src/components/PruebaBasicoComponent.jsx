@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PreguntaComponent from "./PreguntaComponent";
 import styled from "styled-components";
 import NavbarComponent2 from "./NavbarComponent2";
-import PruebaService from "../services/PruebaService";
+import PreguntaService from "../services/PreguntaService";
 
 class PruebaBasicoComponent extends Component {
   constructor(props) {
@@ -11,18 +11,12 @@ class PruebaBasicoComponent extends Component {
       datas: [],
     };
   }
-/** 
-  componentDidMount() {
-    fetch("http://localhost:8080/prueba/basico")
-      .then((response) => response.json())
-      .then((data) => this.setState({ datas: data }));
-  }
-**/
-  componentDidMount() {
-    PruebaService.getPruebaBasico().then((res) => {
-      this.setState({ datas: res.data});
-  });
-  }
+
+  componentDidMount(){
+    PreguntaService.getPreguntaBasico().then((res) => {
+        this.setState({ data: res.data});
+    });
+}
 
   render() {
     return (
@@ -52,14 +46,15 @@ class PruebaBasicoComponent extends Component {
 
 export default PruebaBasicoComponent;
 
-
 const HomeStyle = styled.nav`
+
+
 .text-center {
     justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #FDFEFE;
+    color: #000000;
 }
 .add{
     padding-top: 10px;

@@ -56,7 +56,7 @@ export default function PreguntaComponent({ id, pregunta, codigo, dificultad, re
             align="left"
           />
         </div>
-        <div class="respuesta">
+        <div className="respuesta">
           <Form>
             <Form.Group
               className="mb-3"

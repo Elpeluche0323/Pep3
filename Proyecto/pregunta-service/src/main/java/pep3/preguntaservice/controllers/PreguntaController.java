@@ -42,15 +42,12 @@ public class PreguntaController {
         return preguntaService.obtenerPreguntaAvanzado();
     }
 
+    @GetMapping("/nueva-pregunta")
+    public String pregunta() {return "/nueva-pregunta";}
 
     @PostMapping
     public void guardarPregunta(@RequestBody PreguntaEntity pregunta){
         preguntaService.guardarPregunta(pregunta);
     }
-
-
-
-    @GetMapping("/nueva-pregunta")
-    public String pregunta() {return "/nueva-pregunta";}
 
 }

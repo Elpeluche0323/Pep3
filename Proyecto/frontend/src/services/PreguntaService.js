@@ -1,16 +1,29 @@
 import axios from 'axios';
 
-const PREGUNTA_API_URL = "http://localhost:8082/pregunta";
-
 class PreguntaService {
 
-    getPregunta(){
-        return axios.get(PREGUNTA_API_URL);
+    createPregunta(pregunta){
+        return axios.post("http://localhost:8080/pregunta", pregunta);
     }
 
-    createPregunta(pregunta){
-        return axios.post(PREGUNTA_API_URL, pregunta);
+    getPregunta(){
+        return axios.get("http://localhost:8080/pregunta/lista-preguntas");
     }
+
+     
+    getPreguntaBasico(){
+        return axios.get("http://localhost:8080/pregunta/basico");
+    }
+
+    getPreguntaIntermedio(){
+        return axios.get("http://localhost:8080/pregunta/intermedio");
+    }
+
+    getPreguntaAvanzado(){
+        return axios.get("http://localhost:8080/pregunta/avanzado");
+    }
+
+
 
 }
 

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PreguntaComponent from "./PreguntaComponent";
 import styled from "styled-components";
 import NavbarComponent2 from "./NavbarComponent2";
-import PruebaService from "../services/PruebaService";
+import PreguntaService from "../services/PreguntaService";
 
 class PruebaAvanzadoComponent extends Component {
   constructor(props) {
@@ -11,18 +11,12 @@ class PruebaAvanzadoComponent extends Component {
       datas: [],
     };
   }
-/** 
-  componentDidMount() {
-    fetch("http://localhost:8080/prueba/avanzado")
-      .then((response) => response.json())
-      .then((data) => this.setState({ datas: data }));
-  }
-**/
-  componentDidMount() {
-    PruebaService.getPruebaAvanzado().then((res) => {
-      this.setState({ datas: res.data});
-  });
-  }
+
+  componentDidMount(){
+    PreguntaService.getPreguntaAvanzado().then((res) => {
+        this.setState({ data: res.data});
+    });
+}
 
   render() {
     return (
@@ -32,7 +26,7 @@ class PruebaAvanzadoComponent extends Component {
         <div className="text-center">
           <h1 className="add">
             <b>
-              <u>Prueba: Modo Básico </u>
+              <u>Prueba: Modo Avanzado </u>
             </b>
           </h1>
           {this.state.datas.map((datas) => (
@@ -59,7 +53,7 @@ const HomeStyle = styled.nav`
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #FDFEFE;
+    color: #000000;
 }
 .add{
     padding-top: 10px;

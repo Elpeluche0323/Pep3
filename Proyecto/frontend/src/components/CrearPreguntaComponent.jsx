@@ -38,27 +38,27 @@ export default function CrearPreguntaComponent(props){
     const createPregunta = e => {
         e.preventDefault();
         swal({
-            title: "¿Está seguro de que desea ingresar el nuevo proveedor?",
+            title: "¿Está seguro de que desea ingresar la nueva pregunta?",
             text: "Asegurese de que los parametros esten correctos",
             icon: "warning",
             buttons: ["Cancelar", "Enviar"],
             dangerMode: true
-        }).then(respuesta=>{
-            if(respuesta){
-                swal("Proveedor ingresado correctamente", {icon: "success", timer: "3000"});
-                let pregunta = {pregunta: input.pregunta, codigo: input.codigo, dificultad: input.dificultad,respuesta: input.respuesta};
+        }).then(respuestaa=>{
+            if(respuestaa){
+                swal("Pregunta ingresada correctamente", {icon: "success", timer: "3000"});
+                let preguntaa = {pregunta: input.pregunta, codigo: input.codigo, dificultad: input.dificultad,respuesta: input.respuesta};
                 console.log(input.pregunta)
                 console.log(input.codigo)
                 console.log(input.dificultad)
                 console.log(input.respuesta)
-                console.log("pregunta => " + JSON.stringify(pregunta));
-                PreguntaService.createPregunta(pregunta).then(
+                console.log("preguntaa => " + JSON.stringify(preguntaa));
+                PreguntaService.createPregunta(preguntaa).then(
                     (res) => {
                     }
                   );
                 }
             else{
-                swal({text: "Proveedor no agregado.", icon: "error"});
+                swal({text: "Pregunta no agregada.", icon: "error"});
             }
         });
     };
