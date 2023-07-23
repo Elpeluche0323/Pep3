@@ -17,20 +17,10 @@ public class PreguntaController {
     @Autowired
     PreguntaService preguntaService;
 
-    @GetMapping("/lista-preguntas")
-    public ResponseEntity<List<PreguntaEntity>> obtenerPregunta(){
-        List<PreguntaEntity> pregunta = preguntaService.obtenerPregunta();
-        if(pregunta.isEmpty())
-            return ResponseEntity.noContent().build();
-        return ResponseEntity.ok(pregunta);
-    }
-
-
     @GetMapping("/basico")
     public List<PreguntaEntity> obtenerPreguntaBasico() {
         return preguntaService.obtenerPreguntaBasico();
     }
-
 
     @GetMapping("/intermedio")
     public List<PreguntaEntity> obtenerPreguntaIntermedio() {
@@ -49,5 +39,14 @@ public class PreguntaController {
     public void guardarPregunta(@RequestBody PreguntaEntity pregunta){
         preguntaService.guardarPregunta(pregunta);
     }
+
+    @GetMapping("/lista-preguntas")
+    public ResponseEntity<List<PreguntaEntity>> obtenerPregunta(){
+        List<PreguntaEntity> pregunta = preguntaService.obtenerPregunta();
+        if(pregunta.isEmpty())
+            return ResponseEntity.noContent().build();
+        return ResponseEntity.ok(pregunta);
+    }
+
 
 }

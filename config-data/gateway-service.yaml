@@ -27,8 +27,8 @@ spring:
         - id: pregunta-service
           uri: lb://pregunta-service
           predicates:
-            - Path=/pregunta-service/**
+            - Path=/pregunta/**
         - id: prueba-service
           uri: lb://prueba-service
           predicates:
-            - Path=/prueba-service/**
+            - Path=/prueba/**
