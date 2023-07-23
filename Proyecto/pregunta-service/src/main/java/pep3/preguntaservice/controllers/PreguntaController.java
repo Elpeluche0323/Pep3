@@ -25,14 +25,24 @@ public class PreguntaController {
         return ResponseEntity.ok(pregunta);
     }
 
-    /**
+
     @GetMapping("/basico")
+    public List<PreguntaEntity> obtenerPreguntaBasico() {
+        return preguntaService.obtenerPreguntaBasico();
+    }
+
 
     @GetMapping("/intermedio")
+    public List<PreguntaEntity> obtenerPreguntaIntermedio() {
+        return preguntaService.obtenerPreguntaIntermedio();
+    }
 
     @GetMapping("/avanzado")
+    public List<PreguntaEntity> obtenerPreguntaAvanzado() {
+        return preguntaService.obtenerPreguntaAvanzado();
+    }
 
-     **/
+
     @PostMapping
     public void guardarPregunta(@RequestBody PreguntaEntity pregunta){
         preguntaService.guardarPregunta(pregunta);

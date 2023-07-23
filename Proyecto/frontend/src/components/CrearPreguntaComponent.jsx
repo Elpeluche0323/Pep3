@@ -82,7 +82,7 @@ export default function CrearPreguntaComponent(props){
 
                                         <Form.Group className="mb-3" controlId="codigo" value = {input.codigo} onChange={changeCodigoHandler}>
                                             <Form.Label>Codigo del programa</Form.Label>
-                                            <Form.Control type="codigo" placeholder="Codigo fuente del programa" />
+                                            <textarea type="codigo"  placeholder="Codigo fuente del programa"></textarea>
                                         </Form.Group>
 
                                         <Form.Group className="mb-3" controlId="dificultad" value = {input.dificultad} onChange={changeDificultadHandler}>
@@ -126,7 +126,7 @@ const Styles = styled.div`
 }
 
 .home{
-    background-color: #006992;
+    background-color: #87DF79;
     margin: 0;
     padding: 0;
 }
@@ -146,10 +146,12 @@ const Styles = styled.div`
     padding: 36px;
 }
 
+
+
 input[type=pregunta], 
-input[type=codigo],
 input[type=dificultad],
-input[type=respuesta] {
+input[type=codigo],
+input[type=respuesta]{
     width: 100%;
     padding: 16px 8px;
     margin: 8px 0;
@@ -157,6 +159,12 @@ input[type=respuesta] {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
+
+
+
+
+
+
 
 Button {
     background-color: #42bfbb;

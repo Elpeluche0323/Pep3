@@ -1,10 +1,11 @@
 package pep3.pruebaservice.entities;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "prueba")
@@ -14,7 +15,7 @@ import lombok.NonNull;
 public class PruebaEntity {
     @Id
     @NonNull
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String dificultad;
     private Double promedio;
