@@ -9,6 +9,18 @@ import FooterComponent from "./FooterComponent";
 
 export default function CrearPreguntaComponent(props){
 
+    const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
+  };
+
     const initialState = {
         pregunta: "",
         codigo: "",
@@ -75,27 +87,36 @@ export default function CrearPreguntaComponent(props){
                             <div className="formcontainer">
                                 <hr></hr>
                                 <div className="container">
-                                    <Form>
-                                        <Form.Group className="mb-3" controlId="pregunta" value = {input.pregunta} onChange={changePreguntaHandler}>
+                                    <Form noValidate validated={validated} onSubmit={handleSubmit}>
+
+                                        <Form.Group className="mb-3" controlId="pregunta" controlId2= "validationCustom01" value = {input.pregunta} onChange={changePreguntaHandler} >
                                             <Form.Label>Pregunta</Form.Label>
                                             <Form.Control type="pregunta" placeholder="Pregunta que desea realizar" />
+                                            <Form.Control.Feedback type = "invalid" >
+                                            </Form.Control.Feedback>
                                         </Form.Group>
 
-                                        <Form.Group className="mb-3" controlId="codigo" value = {input.codigo} onChange={changeCodigoHandler}>
+                                        <Form.Group className="mb-3" controlId="codigo" controlId2= "validationCustom01"  value = {input.codigo} onChange={changeCodigoHandler}>
                                             <Form.Label>Codigo del programa</Form.Label>
-                                            <textarea type="codigo"  placeholder="Codigo fuente del programa"></textarea>
+                                            <Form.Control type="codigo"  placeholder="Codigo fuente del programa"></Form.Control>
+                                            <Form.Control.Feedback type = "invalid" >
+                                            </Form.Control.Feedback>
                                         </Form.Group>
 
-                                        <Form.Group className="mb-3" controlId="dificultad" value = {input.dificultad} onChange={changeDificultadHandler}>
+                                        <Form.Group className="mb-3" controlId="dificultad" controlId2= "validationCustom01"  value = {input.dificultad} onChange={changeDificultadHandler}>
                                             <Form.Label>Dificultad de la pregunta</Form.Label>
                                             <Form.Control type="dificultad" placeholder="Añadir la dificultad (basico, intermedio o avanzado)" />
+                                            <Form.Control.Feedback type = "invalid" >
+                                            </Form.Control.Feedback>
                                         </Form.Group>
 
-                                        <Form.Group className="mb-3" controlId="respuesta" value = {input.respuesta} onChange={changeRespuestaHandler}>
+                                        <Form.Group className="mb-3" controlId="respuesta" controlId2= "validationCustom01"  value = {input.respuesta} onChange={changeRespuestaHandler}>
                                             <Form.Label>Respuesta de la pregunta</Form.Label>
                                             <Form.Control type="respuesta" placeholder="Respuesta del codigo" />
+                                            <Form.Control.Feedback type = "invalid" >
+                                            </Form.Control.Feedback>
                                         </Form.Group>
-                                    </Form>
+                                   </Form> 
                                 </div>
                                 <Button className="boton" onClick={createPregunta}>Añadir pregunta</Button>
                             </div>

@@ -12,7 +12,7 @@ export default function HomeComponent() {
     localStorage.setItem("restantes", 4);
     window.location.href = "/pregunta/basico";
   };
-
+ 
   const PreguntaIntermedio = () => {
     localStorage.setItem("puntaje", 0);
     localStorage.setItem("restantes", 4);

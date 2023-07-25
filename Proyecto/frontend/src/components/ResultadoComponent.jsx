@@ -57,7 +57,7 @@ export default function ResultadoComponent() {
         <div className="resultados">
           <h1>
             <b>
-              <u>Tu calificación es: {puntaje}.0/ 7.0</u>
+              <u>Tu calificación es: {puntaje}/ 7.0</u>
             </b>
           </h1>
           <h1>Tu tiempo fue de:</h1>

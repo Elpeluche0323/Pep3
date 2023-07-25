@@ -38,12 +38,6 @@ function Cronometro() {
   localStorage.setItem("minutos", minutos);
   localStorage.setItem("horas", horas);
 
-  const reiniciarCronometro = () => {
-    setSegundos(0);
-    setMinutos(0);
-    setHoras(0);
-  };
-
   const formatoTiempo = valor => {
     return valor < 10 ? `0${valor}` : valor;
   };

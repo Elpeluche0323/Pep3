@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import PreguntaComponent from "./PreguntaComponent";
 import styled from "styled-components";
-import NavbarComponent2 from "./NavbarComponent2";
 import PreguntaService from "../services/PreguntaService";
 import FooterComponent from "./FooterComponent";
+import NavbarComponent4 from "./NavbarComponent4";
 
 class PruebaBasicoComponent extends Component {
   constructor(props) {
@@ -22,8 +22,7 @@ class PruebaBasicoComponent extends Component {
   render() {
     return (
       <HomeStyle>
-        <NavbarComponent2/>
-
+        <NavbarComponent4></NavbarComponent4>
         <div className="text-center">
           <h1 className="add">
             <b>
